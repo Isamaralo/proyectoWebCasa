@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +92,10 @@ body{direction:rtl;
       </tr>
       <tr>
         <td><center>SINTOMAS</center></td>
-     
+     	<c:forEach items="${glaucoma_abierto.lista_sintomas}" 
+        var="sintoma">
+        ${sintoma.descripcion}<br>
+		</c:forEach>
         
       </tr>
         </table>
@@ -115,7 +119,10 @@ body{direction:rtl;
       </tr>
       <tr>
         <td><center>SINTOMAS</center></td>
-     
+     	<c:forEach items="${glaucoma_cerrado.lista_sintomas}" 
+        var="sintoma">
+        ${sintoma.descripcion}<br>
+		</c:forEach>
         
       </tr>
         </table>
