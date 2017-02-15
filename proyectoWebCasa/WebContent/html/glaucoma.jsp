@@ -75,17 +75,17 @@ body{direction:rtl;
     <center><table class="table table-bordered">
     <tbody>
     <tr>
-        <td><img src="img/glaucoma-test1.jpg"  class="img-rounded" alt="Cinque Terre" width="404" height="250">DESCRIPCION<br>${glaucoma.descripcion}</td>
+        <td><img src="img/glaucoma-test1.jpg"  class="img-rounded" alt="Cinque Terre" width="404" height="250">DESCRIPCION<br>${glaucoma_abierto.descripcion}</td>
     
    
    </tr>
     </tbody>
       <tr>
      
-        <td><center>CAUSAS<br>${glaucoma.causa}</center></td>
+        <td><center>CAUSAS<br>${glaucoma_abierto.causa}</center></td>
       </tr>
       <tr>
-        <td><center>TRATAMIENTO<br>${glaucoma.tratamiento}</center></td>
+        <td><center>TRATAMIENTO<br>${glaucoma_abierto.tratamiento}</center></td>
         
        
       </tr>
@@ -99,17 +99,17 @@ body{direction:rtl;
         <table class="table table-bordered">
     <tbody>
     <tr>
-        <td><img src="img/glaucoma-test2.jpg"  class="img-rounded" alt="Cinque Terre" width="404" height="236">DESCRIPCION</td>
+        <td><img src="img/glaucoma-test2.jpg"  class="img-rounded" alt="Cinque Terre" width="404" height="236">DESCRIPCION<br>${glaucoma_cerrado.descripcion}</td>
     
    
    </tr>
     </tbody>
       <tr>
      
-        <td><center>CAUSAS</center></td>
+        <td><center>CAUSAS<br>${glaucoma_cerrado.causa}</center></td>
       </tr>
       <tr>
-        <td><center>TRATAMIENTO</center></td>
+        <td><center>TRATAMIENTO<br>${glaucoma_cerrado.tratamiento}</center></td>
         
        
       </tr>

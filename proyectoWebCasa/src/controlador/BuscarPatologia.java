@@ -48,11 +48,11 @@ public class BuscarPatologia extends HttpServlet {
 			request.getRequestDispatcher(".//html//queratocono.jsp").forward(request, response);
 			break;
 		case 2:
-			request.setAttribute("glaucoma", patoDto);
+			request.setAttribute("glaucoma_abierto", patoDto);
 			request.getRequestDispatcher(".//html//glaucoma.jsp").forward(request, response);
 			break;
 		case 3:
-			request.setAttribute("glaucoma", patoDto);
+			request.setAttribute("glaucoma_cerrado", patoDto);
 			request.getRequestDispatcher(".//html//glaucoma.jsp").forward(request, response);
 			break;
 		case 4:
