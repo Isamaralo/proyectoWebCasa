@@ -36,9 +36,52 @@ public class BuscarPatologia extends HttpServlet {
 		
 		int idn = Integer.parseInt(id); 
 		PatologiaService ps = new PatologiaService();
-		
+		//long tiempo_inicial = System.currentTimeMillis();
 		PatologiaDTO patoDto = ps.buscarPatologiaPorId(idn);
-		response.getWriter().append(patoDto.toString());
+		//response.getWriter().append(patoDto.toString());
+		//long tiempo_final = System.currentTimeMillis();
+		//long tiempo_empleado = tiempo_final-tiempo_inicial;
+		//System.out.println(tiempo_inicial);
+		switch (idn){
+		case 1:
+			request.setAttribute("queratocono", patoDto);
+			request.getRequestDispatcher(".//html//queratocono.jsp").forward(request, response);
+			break;
+		case 2:
+			request.setAttribute("glaucoma", patoDto);
+			request.getRequestDispatcher(".//html//glaucoma.jsp").forward(request, response);
+			break;
+		case 3:
+			request.setAttribute("glaucoma", patoDto);
+			request.getRequestDispatcher(".//html//glaucoma.jsp").forward(request, response);
+			break;
+		case 4:
+			request.setAttribute("catarata", patoDto);
+			request.getRequestDispatcher(".//html//catarata.jsp").forward(request, response);
+			break;
+		case 5:
+			request.setAttribute("conjuntivitis", patoDto);
+			request.getRequestDispatcher(".//html//conjuntivitis.jsp").forward(request, response);
+			break;
+		case 6:
+			request.setAttribute("desprendimiento", patoDto);
+			request.getRequestDispatcher(".//html//desprendimiento.jsp").forward(request, response);
+			break;
+		case 7:
+			request.setAttribute("acromatopsia", patoDto);
+			request.getRequestDispatcher(".//html//acromatopsia.jsp").forward(request, response);
+			break;
+		case 8:
+			request.setAttribute("estrabismo", patoDto);
+			request.getRequestDispatcher(".//html//estrabismo.jsp").forward(request, response);
+			break;
+		case 9:
+			request.setAttribute("presbicia", patoDto);
+			request.getRequestDispatcher(".//html//presbicia.jsp").forward(request, response);
+			break;
+		default:
+			break;
+		}
 	}
 
 	/**
