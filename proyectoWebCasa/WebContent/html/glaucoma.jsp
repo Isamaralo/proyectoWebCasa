@@ -91,12 +91,12 @@ body{direction:rtl;
        
       </tr>
       <tr>
-        <td><center>SINTOMAS</center></td>
+        <td><center>SINTOMAS<br>
      	<c:forEach items="${glaucoma_abierto.lista_sintomas}" 
         var="sintoma">
         ${sintoma.descripcion}<br>
 		</c:forEach>
-        
+        </center></td>
       </tr>
         </table>
         <CENTER ><h2>GLAUCOMA 2</h2>
@@ -118,12 +118,12 @@ body{direction:rtl;
        
       </tr>
       <tr>
-        <td><center>SINTOMAS</center></td>
+        <td><center>SINTOMAS<br>
      	<c:forEach items="${glaucoma_cerrado.lista_sintomas}" 
         var="sintoma">
         ${sintoma.descripcion}<br>
 		</c:forEach>
-        
+        </center></td>
       </tr>
         </table>
       </center>

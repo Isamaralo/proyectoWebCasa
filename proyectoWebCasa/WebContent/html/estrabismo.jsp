@@ -81,12 +81,12 @@ body{direction:rtl;
        
       </tr>
       <tr>
-        <td><center>SINTOMAS</td>
+        <td><center>SINTOMAS<br>
      	<c:forEach items="${estrabismo.lista_sintomas}" 
         var="sintoma">
         ${sintoma.descripcion}<br>
 		</c:forEach>
-        
+        </center></td>
       </tr>
         </table>
       </center>
