@@ -11,6 +11,11 @@ public class PatologiaDTO {
 	private String causa;
 	private List<SintomaDTO> lista_sintomas;
 
+	public PatologiaDTO ()
+	{
+		
+	}
+	
 	public PatologiaDTO(int id, String nombre, String descripcion, String tratamiento, String causa,
 			List<SintomaDTO> lista_sintomas) {
 		this.id = id;

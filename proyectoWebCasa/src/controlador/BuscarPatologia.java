@@ -2,6 +2,9 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +21,25 @@ import servicios.PatologiaService;
 @WebServlet("/BuscarPatologia")
 public class BuscarPatologia extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private List<PatologiaDTO> lista_patologias = new ArrayList<PatologiaDTO>(); 
+	private HashMap<Integer, PatologiaDTO> hm = new HashMap<Integer, PatologiaDTO>();
+	
+	public HashMap<Integer, PatologiaDTO> getHm() {
+		return hm;
+	}
+
+	public void setHm(HashMap<Integer, PatologiaDTO> hm) {
+		this.hm = hm;
+	}
+
+	public List<PatologiaDTO> getLista_patologias() {
+		return lista_patologias;
+	}
+
+	public void setLista_patologias(List<PatologiaDTO> lista_patologias) {
+		this.lista_patologias = lista_patologias;
+	}
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -38,10 +59,12 @@ public class BuscarPatologia extends HttpServlet {
 		PatologiaService ps = new PatologiaService();
 		//long tiempo_inicial = System.currentTimeMillis();
 		PatologiaDTO patoDto = ps.buscarPatologiaPorId(idn);
+		
 		//response.getWriter().append(patoDto.toString());
 		//long tiempo_final = System.currentTimeMillis();
 		//long tiempo_empleado = tiempo_final-tiempo_inicial;
 		//System.out.println(tiempo_inicial);
+		
 		switch (idn){
 		case 1:
 			request.setAttribute("queratocono", patoDto);

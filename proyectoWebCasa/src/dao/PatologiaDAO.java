@@ -12,30 +12,62 @@ import dto.SintomaDTO;
 
 public class PatologiaDAO {
 
+	public List<PatologiaDTO> getListaPatologias () throws Throwable
+	{
+		List<PatologiaDTO> lista_patologias = new ArrayList<PatologiaDTO>();
+			
+			PatologiaDTO patologia = null;
+			Pool pool = null;
+			pool = Pool.getInstance();
+			Connection conn = Pool.getConnection();
+			ResultSet rset = null;
+			Statement stmt = null;
+			try
+			{
+				stmt = conn.createStatement();
+				rset = stmt.executeQuery(Consulta.CONSULTA_LISTAR_PATOLOGIAS);
+				while (rset.next())
+			    {
+					patologia = new PatologiaDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), getSintomasPorPatologiaID(conn, rset.getInt(1)));
+					lista_patologias.add(patologia);
+			    }
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			finally 
+			{
+				Pool.liberarRecursos(conn, stmt, rset);
+			}
+			
+		return lista_patologias;
+	}
 	public PatologiaDTO buscarPorId (int id)
 	{
 		PatologiaDTO pdto = null;
 			
-		Pool pool = null;
-		pool = Pool.getInstance();
-		Connection conn = Pool.getConnection();
-		Statement stmt = null;
-		ResultSet rset = null;
-		try {
-			stmt = conn.createStatement();
-			rset = stmt.executeQuery(Consulta.CONSULTA_PATOLOGIAS_POR_ID+id);
-			while (rset.next())
-		    {
-				pdto = new PatologiaDTO(rset.getInt(1), rset.getNString(2), rset.getString(3), rset.getString(4), rset.getNString(5), getSintomasPorPatologiaID(conn, rset.getInt(1)));
+			Pool pool = null;
+			pool = Pool.getInstance();
+			Connection conn = Pool.getConnection();
+			Statement stmt = null;
+			ResultSet rset = null;
+			try {
+				stmt = conn.createStatement();
+				rset = stmt.executeQuery(Consulta.CONSULTA_PATOLOGIAS_POR_ID+id);
+				while (rset.next())
+			    {
+					pdto = new PatologiaDTO(rset.getInt(1), rset.getNString(2), rset.getString(3), rset.getString(4), rset.getNString(5), getSintomasPorPatologiaID(conn, rset.getInt(1)));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		finally
-		{
-			Pool.liberarRecursos(conn, stmt, rset);
-		}
+			finally
+			{
+				Pool.liberarRecursos(conn, stmt, rset);
+			}
+			
 		return pdto;
 	}
 	
