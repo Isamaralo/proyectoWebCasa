@@ -41,7 +41,6 @@ public class EscuchaInicioFin implements ServletContextListener {
     public void contextInitialized(ServletContextEvent arg0)  { 
          // TODO Auto-generated method stub
     	PatologiaDAO pdao = new PatologiaDAO();
-    	MapaPatologias mp = new MapaPatologias();
     	HashMap<Integer, PatologiaDTO> hm  = new HashMap<Integer, PatologiaDTO>();
 		List<PatologiaDTO> lista_pato = new ArrayList<PatologiaDTO>();
 		
@@ -51,7 +50,7 @@ public class EscuchaInicioFin implements ServletContextListener {
 			for (PatologiaDTO patologia : lista_pato) {
 	 	    	hm.put(patologia.getId(), patologia);
 	  	    }
-			mp.setHm(hm);
+			MapaPatologias.setHm(hm);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
