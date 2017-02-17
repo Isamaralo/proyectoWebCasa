@@ -78,7 +78,7 @@ body{direction:rtl;
     <tbody>
     <tr>
         <td><img src= "img\catarata-ojos.jpg" class="img-rounded" alt="Cinque Terre" width="404" height="300"></td>
-        <td align="left"> <br><b>DESCRIPCIÓN  </b><br><br><div align="left" >${catarata.descripcion}<br></div></td>
+        <td align="left"> <br><b>DESCRIPCIÓN  </b><br><br><td align="left" >${catarata.descripcion}<br></td>
     
    
    </tr>
