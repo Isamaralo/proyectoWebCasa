@@ -66,7 +66,7 @@ body{direction:rtl;
     <center><table class="table table-bordered">
     <tbody>
     <tr>
-        <td><img src="${patologia.ruta_imagen}"  class="img-rounded" alt="Cinque Terre" width="404" height="236">DESCRIPCION<br>${patologia.descripcion}</td>
+        <td><img src="${patologia.ruta_imagen}"  class="img-rounded" alt="Imagen patología" width="404" height="236">DESCRIPCION<br>${patologia.descripcion}</td>
     
    
    </tr>
