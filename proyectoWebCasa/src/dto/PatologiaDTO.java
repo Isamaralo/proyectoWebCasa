@@ -10,20 +10,22 @@ public class PatologiaDTO {
 	private String tratamiento;
 	private String causa;
 	private List<SintomaDTO> lista_sintomas;
+	private String ruta_imagen;
 
 	public PatologiaDTO ()
 	{
 		
 	}
-	
 	public PatologiaDTO(int id, String nombre, String descripcion, String tratamiento, String causa,
-			List<SintomaDTO> lista_sintomas) {
+			List<SintomaDTO> lista_sintomas, String ruta_imagen) {
+		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.tratamiento = tratamiento;
 		this.causa = causa;
 		this.lista_sintomas = lista_sintomas;
+		this.ruta_imagen = ruta_imagen;
 	}
 	public String getCausa() {
 		return causa;
@@ -70,7 +72,13 @@ public class PatologiaDTO {
 		}
 		return res;
 	}
-	
+	public String getRuta_imagen() {
+		return ruta_imagen;
+	}
+
+	public void setRuta_imagen(String ruta_imagen) {
+		this.ruta_imagen = ruta_imagen;
+	}
 	
 	@Override
 	public String toString() {

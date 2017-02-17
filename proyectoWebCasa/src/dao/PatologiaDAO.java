@@ -28,7 +28,7 @@ public class PatologiaDAO {
 				rset = stmt.executeQuery(Consulta.CONSULTA_LISTAR_PATOLOGIAS);
 				while (rset.next())
 			    {
-					patologia = new PatologiaDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), getSintomasPorPatologiaID(conn, rset.getInt(1)));
+					patologia = new PatologiaDTO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), getSintomasPorPatologiaID(conn, rset.getInt(1)), rset.getNString(6));
 					lista_patologias.add(patologia);
 			    }
 			}
@@ -57,7 +57,7 @@ public class PatologiaDAO {
 				rset = stmt.executeQuery(Consulta.CONSULTA_PATOLOGIAS_POR_ID+id);
 				while (rset.next())
 			    {
-					pdto = new PatologiaDTO(rset.getInt(1), rset.getNString(2), rset.getString(3), rset.getString(4), rset.getNString(5), getSintomasPorPatologiaID(conn, rset.getInt(1)));
+					pdto = new PatologiaDTO(rset.getInt(1), rset.getNString(2), rset.getString(3), rset.getString(4), rset.getNString(5), getSintomasPorPatologiaID(conn, rset.getInt(1)), rset.getNString(6));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

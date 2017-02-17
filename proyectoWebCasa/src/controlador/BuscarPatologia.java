@@ -63,8 +63,9 @@ public class BuscarPatologia extends HttpServlet {
 		//long tiempo_final = System.currentTimeMillis();
 		//long tiempo_empleado = tiempo_final-tiempo_inicial;
 		//System.out.println(tiempo_inicial);
-		
-		switch (idn){
+		request.setAttribute("patologia", patoDto);
+		request.getRequestDispatcher(".//html//mostrarpatologia.jsp").forward(request, response);
+		/*switch (idn){
 		case 1:
 			request.setAttribute("queratocono", patoDto);
 			request.getRequestDispatcher(".//html//queratocono.jsp").forward(request, response);
@@ -103,7 +104,7 @@ public class BuscarPatologia extends HttpServlet {
 			break;
 		default:
 			break;
-		}
+		}*/
 	}
 
 	/**

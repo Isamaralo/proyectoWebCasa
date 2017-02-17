@@ -21,7 +21,7 @@ body{direction:rtl;
      background-clip: content-box;
      background-origin: content-box;
      background-size: cover;
-     color:#5E6066;
+     color:black;
     font-family:GESSTwoLight,GESSTwoMediumRegular,Droid Arabic Kufi,Helvetica,sans-serif;
     font-size:16px}
   </style>
@@ -66,7 +66,7 @@ body{direction:rtl;
     <center><table class="table table-bordered">
     <tbody>
     <tr>
-        <td><img src="${patologia.imagen}"  class="img-rounded" alt="Cinque Terre" width="404" height="236">DESCRIPCION<br>${patologia.descripcion}</td>
+        <td><img src="${patologia.ruta_imagen}"  class="img-rounded" alt="Cinque Terre" width="404" height="236">DESCRIPCION<br>${patologia.descripcion}</td>
     
    
    </tr>
