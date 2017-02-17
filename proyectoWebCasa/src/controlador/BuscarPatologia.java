@@ -59,7 +59,6 @@ public class BuscarPatologia extends HttpServlet {
 		PatologiaService ps = new PatologiaService();
 		//long tiempo_inicial = System.currentTimeMillis();
 		PatologiaDTO patoDto = ps.buscarPatologiaPorId(idn);
-		
 		//response.getWriter().append(patoDto.toString());
 		//long tiempo_final = System.currentTimeMillis();
 		//long tiempo_empleado = tiempo_final-tiempo_inicial;

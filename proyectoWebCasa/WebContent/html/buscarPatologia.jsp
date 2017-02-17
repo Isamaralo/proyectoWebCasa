@@ -7,23 +7,12 @@
   <title>MIRATE_EL_OJO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="img\logoico.ico">
+  <link rel="icon" href="img/logoico.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: skyblue ;
-      padding: 25px;
-    }
-H1{size:4 color:pink}
+ 
 body{direction:rtl;
      background-image: url(img/fondo.jpg);
      background-color: rgb(255, 255, 255);
@@ -32,12 +21,12 @@ body{direction:rtl;
      background-clip: content-box;
      background-origin: content-box;
      background-size: cover;
-     color:black;
+     color:#5E6066;
     font-family:GESSTwoLight,GESSTwoMediumRegular,Droid Arabic Kufi,Helvetica,sans-serif;
     font-size:16px}
   </style>
 </head>
-<body  background="/img/fondo.jpg"  width="1500" heigth="1500">
+<body  background="img/fondo.jpg"  width="1500" heigth="1500">
   
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -72,45 +61,37 @@ body{direction:rtl;
 
 
 <div class="container">
-  <h2 align="left">CATARATAS</h2>
+  <CENTER ><h2>${patologia.nombre}</h2>
             
-    <center><table style="backgroundcolor="white"; opacity: 0,5; filter:alpha(opacity=50)" class="table table-bordered">
+    <center><table class="table table-bordered">
     <tbody>
     <tr>
-        <td><img src= "img\catarata-ojos.jpg" class="img-rounded" alt="Cinque Terre" width="404" height="300"></td>
-        <td align="left"> <br><b>DESCRIPCIÓN  </b><br><br><div align="left" >${catarata.descripcion}<br></div></td>
+        <td><img src="${patologia.imagen}"  class="img-rounded" alt="Cinque Terre" width="404" height="236">DESCRIPCION<br>${patologia.descripcion}</td>
     
    
    </tr>
     </tbody>
-        <tbody>
       <tr>
      
-        <td colspan="2" align="left"><br><b>CAUSA</b> <br><br><div align="left" >${catarata.causa}<br></div></td>
+          <td><center>CAUSAS<br>${patologia.causa}</center></td>
       </tr>
       <tr>
-          <td colspan="2" align="left"><br><b>TRATAMIENTO </b><br><br> <div> <p align="left">${catarata.tratamiento}<br></p></div></td>
+          <td><center>TRATAMIENTO<br>${patologia.tratamiento}</center></td>
         
        
       </tr>
       <tr>
-        <td colspan="2" align="left"><br><b>SINTOMAS</b><br><br><div align="left" align-text="justify">
-        <c:forEach items="${catarata.lista_sintomas}" 
+        <td><center>SINTOMAS<br>
+     	<c:forEach items="${patologia.lista_sintomas}" 
         var="sintoma">
         ${sintoma.descripcion}<br>
-		</c:forEach></div>
-     </td>
-     
+		</c:forEach>
+        </center></td>
       </tr>
-    </tbody>
-  </table></center>
+        </table>
+      </center>
+    
     </CENTER>
     </div>
-
-
-    
-
-
-
-</body>
+    </body>
 </html>

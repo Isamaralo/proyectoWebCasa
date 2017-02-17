@@ -12,9 +12,8 @@ public class PatologiaService {
 	{
 		PatologiaDTO pdto = null;
 		PatologiaDAO pdao = new PatologiaDAO();
-		HashMap<Integer, PatologiaDTO> hm = MapaPatologias.getHm();
+		pdto = MapaPatologias.getHm().get(id);
 		//	pdto = pdao.buscarPorId(id);
-			pdto = hm.get(id);
 		return pdto;
 	}
 }

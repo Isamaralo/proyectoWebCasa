@@ -32,7 +32,7 @@ body{direction:rtl;
      background-clip: content-box;
      background-origin: content-box;
      background-size: cover;
-     color:black;
+     color:#5E6066;
     font-family:GESSTwoLight,GESSTwoMediumRegular,Droid Arabic Kufi,Helvetica,sans-serif;
     font-size:16px}
   </style>
@@ -72,13 +72,12 @@ body{direction:rtl;
 
 
 <div class="container">
-  <h2 align="left">CATARATAS</h2>
+  <CENTER ><h2>CATARATAS</h2>
             
-    <center><table style="backgroundcolor="white"; opacity: 0,5; filter:alpha(opacity=50)" class="table table-bordered">
+    <center><table class="table table-bordered">
     <tbody>
     <tr>
-        <td><img src= "img\catarata-ojos.jpg" class="img-rounded" alt="Cinque Terre" width="404" height="300"></td>
-        <td align="left"> <br><b>DESCRIPCIÓN  </b><br><br><div align="left" >${catarata.descripcion}<br></div></td>
+        <td><img src= "img\catarata-ojos.jpg" class="img-rounded" alt="Cinque Terre" width="404" height="300">DESCRIPCIÓN <br>${catarata.descripcion}</td>
     
    
    </tr>
@@ -86,21 +85,20 @@ body{direction:rtl;
         <tbody>
       <tr>
      
-        <td colspan="2" align="left"><br><b>CAUSA</b> <br><br><div align="left" >${catarata.causa}<br></div></td>
+        <td><center>CAUSA <br>${catarata.causa}</center></td>
       </tr>
       <tr>
-          <td colspan="2" align="left"><br><b>TRATAMIENTO </b><br><br> <div> <p align="left">${catarata.tratamiento}<br></p></div></td>
+          <td><center>TRATAMIENTO <br>${catarata.tratamiento}</center></td>
         
        
       </tr>
       <tr>
-        <td colspan="2" align="left"><br><b>SINTOMAS</b><br><br><div align="left" align-text="justify">
-        <c:forEach items="${catarata.lista_sintomas}" 
+        <td><center>SINTOMAS<br>
+     	<c:forEach items="${catarata.lista_sintomas}" 
         var="sintoma">
         ${sintoma.descripcion}<br>
-		</c:forEach></div>
-     </td>
-     
+		</c:forEach>
+        </center></td>
       </tr>
     </tbody>
   </table></center>
