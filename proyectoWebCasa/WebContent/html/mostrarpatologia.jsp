@@ -67,7 +67,7 @@ body{direction:rtl;
     <tbody>
     <tr>
         <td><img src="${patologia.ruta_imagen}"  class="img-rounded" alt="Imagen patología" width="404" height="236">
-        <br><b><div align="left" >DESCRIPCION<br></b><br><br>${patologia.descripcion}<br></div></td>
+        <br><b>DESCRIPCION<br></b><br><br>${patologia.descripcion}<br></div></td>
     
    
    </tr>
