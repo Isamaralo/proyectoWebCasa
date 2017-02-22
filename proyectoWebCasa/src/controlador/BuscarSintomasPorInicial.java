@@ -40,29 +40,21 @@ public class BuscarSintomasPorInicial extends HttpServlet {
 		
 		List<String> lista_sintomas = new ArrayList<String>();
 		System.out.println(request.getParameter("intro"));
-		lista_sintomas = ss.buscarSintomasPorInicial(request.getParameter("intro"));
+		lista_sintomas = ss.buscarSintomasPorInicial("v");
 		
-		Gson gson = new Gson();
 		for (String string : lista_sintomas) {
-			String mensajeJson = gson.toJson(string);
-			response.setContentType("application/json");
-		    response.setCharacterEncoding("UTF-8");
-		    response.getWriter().write(mensajeJson);
+			System.out.println(string);
 		}
 		
-		/*for (String string : lista_sintomas) {
-			response.getWriter().append(string);
-			System.out.println(string);
-		}*/
-		
-		/*PrintWriter out = response.getWriter();
-		System.out.println(request.getParameter("intro"));
-		
-		response.setContentType("text/plain");
-		response.setCharacterEncoding("UTF-8");
-		
-		out = response.getWriter();
-		out.println(lista_sintomas.get(1));*/
+//		lista_sintomas = ss.buscarSintomasPorInicial(request.getParameter("intro"));
+//		
+//		Gson gson = new Gson();
+//		for (String string : lista_sintomas) {
+//			String mensajeJson = gson.toJson(string);
+//			response.setContentType("application/json");
+//		    response.setCharacterEncoding("UTF-8");
+//		    response.getWriter().write(mensajeJson);
+//		}
 		
 	}
 
