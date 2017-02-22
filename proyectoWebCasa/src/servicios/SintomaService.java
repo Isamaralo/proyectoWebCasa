@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.SintomaDAO;
+import dto.SintomaDTO;
 
 public class SintomaService {
 	
-	public List<String> buscarSintomasPorInicial (String inicial)
+	public List<SintomaDTO> buscarSintomasPorInicial (String inicial)
 	{
-		List<String> lista_sintomas = new ArrayList<String>();
+		List<SintomaDTO> lista_sintomas = new ArrayList<SintomaDTO>();
 		SintomaDAO sintdao = new SintomaDAO();
 		
 			lista_sintomas = sintdao.buscarSintomasPorInicial(inicial);

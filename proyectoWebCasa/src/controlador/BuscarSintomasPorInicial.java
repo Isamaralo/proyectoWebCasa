@@ -2,6 +2,7 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import dto.SintomaDTO;
 import servicios.SintomaService;
 
 /**
@@ -38,23 +41,21 @@ public class BuscarSintomasPorInicial extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		SintomaService ss = new SintomaService();
 		
-		List<String> lista_sintomas = new ArrayList<String>();
-		System.out.println(request.getParameter("intro"));
-		lista_sintomas = ss.buscarSintomasPorInicial("v");
+		List<SintomaDTO> lista_sintomas = new ArrayList<SintomaDTO>();
+		lista_sintomas = ss.buscarSintomasPorInicial(request.getParameter("intro"));
 		
-		for (String string : lista_sintomas) {
-			System.out.println(string);
-		}
-		
-//		lista_sintomas = ss.buscarSintomasPorInicial(request.getParameter("intro"));
-//		
-//		Gson gson = new Gson();
-//		for (String string : lista_sintomas) {
-//			String mensajeJson = gson.toJson(string);
-//			response.setContentType("application/json");
-//		    response.setCharacterEncoding("UTF-8");
-//		    response.getWriter().write(mensajeJson);
+//		for (SintomaDTO sintdto : lista_sintomas) {
+//			System.out.println(sintdto.getId()+" "+sintdto.getDescripcion());
 //		}
+		
+		Gson gson = new Gson();
+		Type tipoListaSintomas = new TypeToken<List<SintomaDTO>>(){}.getType();
+		String s = gson.toJson(lista_sintomas, tipoListaSintomas);
+//		System.out.println(s);
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().write(s);
 		
 	}
 

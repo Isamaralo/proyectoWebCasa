@@ -6,13 +6,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import dto.SintomaDTO;
+
 public class SintomaDAO {
 	
-	public List<String> buscarSintomasPorInicial (String inicial)
+	public List<SintomaDTO> buscarSintomasPorInicial (String inicial)
 	{
-		List<String> lista_sintomas = new ArrayList<String>();
+		List<SintomaDTO> lista_sintomas = new ArrayList<SintomaDTO>();
 		
-			String sintoma = null;
+			SintomaDTO sintoma = null;
 			Pool pool = null;
 			pool = Pool.getInstance();
 			Connection conn = Pool.getConnection();
@@ -24,7 +26,7 @@ public class SintomaDAO {
 				rset = stmt.executeQuery(Consulta.CONSULTA_SINTOMAS_POR_INICIAL+inicial+"%'");
 				while (rset.next())
 			    {
-					sintoma = rset.getString(1);
+					sintoma = new SintomaDTO(rset.getInt(1), rset.getString(2));
 					lista_sintomas.add(sintoma);
 			    }
 			}

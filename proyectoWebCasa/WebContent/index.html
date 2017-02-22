@@ -9,14 +9,18 @@ var xmlHttp = new XMLHttpRequest();
 
 function buscaSintoma()
 {
-	xmlHttp.onreadystatechange = procesarEventos;
-	xmlHttp.open('GET', 'BuscarSintomasPorInicial', true); 
-	xmlHttp.send(null);
+	var valor_introducido = document.getElementById("intro").value;
+
+	if(valor_introducido != null)
+	{
+		xmlHttp.onreadystatechange = procesarEventos;
+		xmlHttp.open('GET', 'BuscarSintomasPorInicial?intro='+valor_introducido, true); 
+		xmlHttp.send(null);
+	}
 }
 
 function procesarEventos()
 {
-	
   if(xmlHttp.readyState==4) //ya hemos recibido respuesta del servidor
   {
       if(xmlHttp.status==200)// y el código de la cabecera http es bueno
