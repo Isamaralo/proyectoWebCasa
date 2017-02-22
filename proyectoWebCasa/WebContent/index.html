@@ -6,7 +6,11 @@
 <link href="css/estilo.css" rel="stylesheet"/>
 <script>
 
-var xmlHttp = new XMLHttpRequest();
+function iniciaObjetoRequest ()
+{
+	
+return new XMLHttpRequest();
+}
 
 function buscaSintoma()
 {
@@ -14,6 +18,7 @@ function buscaSintoma()
 
 	if(valor_introducido != "")
 	{
+		xmlHttp = iniciaObjetoRequest();
 		xmlHttp.onreadystatechange = procesarEventos;
 		xmlHttp.open('GET', 'BuscarSintomasPorInicial?intro='+valor_introducido, true); 
 		xmlHttp.send(null);
@@ -23,6 +28,15 @@ function buscaSintoma()
 function seleccionaSintoma (text)
 {
 	alert (text);
+	xmlHttp = iniciaObjetoRequest();
+	xmlHttp.onreadystatechange = mostrarPatologia;
+	xmlHttp.open('GET', 'BuscarPatologia?id='+text, true); 
+	xmlHttp.send(null);
+}
+
+function mostrarPatologia()
+{
+	alert("Funciona");
 }
 
 function procesarEventos()
